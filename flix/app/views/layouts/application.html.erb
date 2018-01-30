@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Flix</title>
-    <%= csrf_meta_tags %>
+<header style="padding: 5px; color: #F0F0F0; background: #237CBE;">
+  <h1>Movie Ratings</h1>
+</header>
 
-    <%= stylesheet_link_tag    'application.css', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application.js', 'data-turbolinks-track': 'reload' %>
-  </head>
+<head>
+  <title>Movie Ratings</title>
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag    'application.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application.js', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
 
-  <body>
-    <%= yield %>
-  </body>
+<%= render "layouts/header" %>
+<%= render "layouts/sidebar" %>
+
+  <%= yield %>
+
+<%= render "layouts/footer" %>
+
+</body>
 </html>
