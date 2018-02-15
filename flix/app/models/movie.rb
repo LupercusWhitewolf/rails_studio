@@ -21,6 +21,14 @@ class Movie < ApplicationRecord
     total_gross.blank? || total_gross < 50000000
   end
 
+  def average_stars
+    reviews.average(:stars)
+  end
+
+  def recent_reviews
+    reviews.order('created_at desc').limit(2)
+  end
+
   validates :title, :released_on, :duration, presence: true
 
   validates :description, length: { minimum: 25 }
